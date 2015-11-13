@@ -1,0 +1,196 @@
+curl -XPOST http://localhost:9200/intimev2/escombos/_mapping -d'
+{
+    "escombos": {
+        "properties": {
+            "associateId": {
+                "type": "long"
+            },
+            "associateName": {
+                "type": "string",
+                "store": "no",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "ik_max_word",
+                "search_analyzer": "ik_max_word",
+                "include_in_all": "false",
+                "boost": 1
+            },
+            "brands": {
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "store": "no",
+                        "term_vector": "with_positions_offsets",
+                        "analyzer": "ik_max_word",
+                        "search_analyzer": "ik_max_word",
+                        "include_in_all": "true",
+                        "boost": 4
+                    },
+                    "group": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "string",
+                        "store": "yes",
+                        "term_vector": "with_positions_offsets",
+                        "analyzer": "ik_max_word",
+                        "search_analyzer": "ik_max_word",
+                        "include_in_all": "true",
+                        "boost": 6
+                    },
+                    "status": {
+                        "type": "long"
+                    }
+                }
+            },
+            "createDate": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            },
+            "createUser": {
+                "type": "long"
+            },
+            "desc": {
+                "type": "string"
+            },
+            "discountAmount": {
+                "type": "double"
+            },
+            "expireDate": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            },
+            "group": {
+                "properties": {
+                    "createdDate": {
+                        "type": "date",
+                        "format": "dateOptionalTime"
+                    },
+                    "createdUser": {
+                        "type": "long"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "string",
+                        "store": "no",
+                        "term_vector": "with_positions_offsets",
+                        "analyzer": "ik_max_word",
+                        "search_analyzer": "ik_max_word",
+                        "boost": 1
+                    },
+                    "status": {
+                        "type": "long"
+                    },
+                    "updatedDate": {
+                        "type": "date",
+                        "format": "dateOptionalTime"
+                    },
+                    "updatedUser": {
+                        "type": "long"
+                    }
+                }
+            },
+            "id": {
+                "type": "long"
+            },
+            "isInPromotion": {
+                "type": "boolean"
+            },
+            "onlineDate": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            },
+            "originPrice": {
+                "type": "double"
+            },
+            "price": {
+                "type": "double"
+            },
+            "productType": {
+                "type": "long"
+            },
+            "resources": {
+                "properties": {
+                    "colorId": {
+                        "type": "long"
+                    },
+                    "height": {
+                        "type": "long"
+                    },
+                    "id": {
+                        "type": "long"
+                    },
+                    "isDefault": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "sortOrder": {
+                        "type": "long"
+                    },
+                    "sourceId": {
+                        "type": "long"
+                    },
+                    "sourceType": {
+                        "type": "long"
+                    },
+                    "status": {
+                        "type": "long"
+                    },
+                    "type": {
+                        "type": "long"
+                    },
+                    "width": {
+                        "type": "long"
+                    }
+                }
+            },
+            "status": {
+                "type": "long"
+            },
+            "storeId": {
+                "type": "long"
+            },
+            "tags": {
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "name": {
+                        "type": "string",
+                        "store": "no",
+                        "term_vector": "with_positions_offsets",
+                        "analyzer": "ik_max_word",
+                        "search_analyzer": "ik_max_word",
+                        "boost": 1
+                    },
+                    "sortOrder": {
+                        "type": "long"
+                    },
+                    "status": {
+                        "type": "long"
+                    }
+                }
+            },
+            "updateDate": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            },
+            "updateUser": {
+                "type": "long"
+            },
+            "userId": {
+                "type": "long"
+            }
+        }
+    }
+}
+'

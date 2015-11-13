@@ -1,0 +1,42 @@
+curl -XPOST http://localhost:9200/intimev2/esbrands/_mapping -d'
+{
+    "esbrands": {
+        "properties": {
+            "engName": {
+                "type": "string",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "ik_max_word",
+                "search_analyzer": "ik_max_word",
+                "boost": 3
+            },
+            "group": {
+                "type": "string"
+            },
+            "id": {
+                "type": "long"
+            },
+            "name": {
+                "type": "string",
+                "store": "yes",
+                "term_vector": "with_positions_offsets",
+                "analyzer": "ik_max_word",
+                "search_analyzer": "ik_max_word",
+                "boost": 6
+            },
+            "status": {
+                "type": "long"
+            },
+            "stores": {
+                "properties": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "status": {
+                        "type": "long"
+                    }
+                }
+            }
+        }
+    }
+}
+'

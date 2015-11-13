@@ -1,0 +1,432 @@
+curl -XPOST http://localhost:9200/intimev2/esproducts/_mapping -d'
+{
+  "esproducts": {
+      "properties": {
+          "brand": {
+              "properties": {
+                  "description": {
+                      "type": "string",
+                      "store": "no",
+                      "term_vector": "with_positions_offsets",
+                      "analyzer": "ik_max_word",
+                      "search_analyzer": "ik_max_word",
+                      "boost": 1
+                  },
+                  "engName": {
+                      "type": "string",
+                      "store": "no",
+                      "term_vector": "with_positions_offsets",
+                      "analyzer": "ik_max_word",
+                      "search_analyzer": "ik_max_word",
+                      "include_in_all": "true",
+                      "boost": 2
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "name": {
+                      "type": "string",
+                      "store": "yes",
+                      "term_vector": "with_positions_offsets",
+                      "analyzer": "ik_max_word",
+                      "search_analyzer": "ik_max_word",
+                      "include_in_all": "true",
+                      "boost": 3
+                  },
+                  "status": {
+                      "type": "long"
+                  }
+              }
+          },
+          "categoryId": {
+              "type": "long"
+          },
+          "createUserId": {
+              "type": "long"
+          },
+          "createdDate": {
+              "type": "date",
+              "format": "dateOptionalTime"
+          },
+          "description": {
+              "type": "string",
+              "store": "yes",
+              "term_vector": "with_positions_offsets",
+              "analyzer": "ik_max_word",
+              "search_analyzer": "ik_max_word",
+              "include_in_all": "true",
+              "boost": 4
+          },
+          "discountRate": {
+              "type": "double"
+          },
+          "favoriteCount": {
+              "type": "long"
+          },
+          "id": {
+              "type": "long"
+          },
+          "inventoryCount": {
+              "type": "long"
+          },
+          "involvedCount": {
+              "type": "long"
+          },
+          "is4Sale": {
+              "type": "boolean"
+          },
+          "isSystem": {
+              "type": "boolean"
+          },
+          "level": {
+              "type": "long"
+          },
+          "name": {
+              "type": "string",
+              "store": "yes",
+              "term_vector": "with_positions_offsets",
+              "analyzer": "ik_max_word",
+              "search_analyzer": "ik_max_word",
+              "include_in_all": "true",
+              "boost": 6
+          },
+          "price": {
+              "type": "double"
+          },
+          "promotion": {
+              "properties": {
+                  "createUserId": {
+                      "type": "long"
+                  },
+                  "createdDate": {
+                      "type": "date",
+                      "format": "dateOptionalTime"
+                  },
+                  "description": {
+                      "type": "string"
+                  },
+                  "endDate": {
+                      "type": "date",
+                      "format": "dateOptionalTime"
+                  },
+                  "favoriteCount": {
+                      "type": "long"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "involvedCount": {
+                      "type": "long"
+                  },
+                  "isProdBindable": {
+                      "type": "boolean"
+                  },
+                  "isTop": {
+                      "type": "boolean"
+                  },
+                  "likeCount": {
+                      "type": "long"
+                  },
+                  "name": {
+                      "type": "string"
+                  },
+                  "publicationLimit": {
+                      "type": "long"
+                  },
+                  "resource": {
+                      "properties": {
+                          "domain": {
+                              "type": "string"
+                          },
+                          "height": {
+                              "type": "long"
+                          },
+                          "id": {
+                              "type": "long"
+                          },
+                          "isDefault": {
+                              "type": "boolean"
+                          },
+                          "name": {
+                              "type": "string"
+                          },
+                          "sortOrder": {
+                              "type": "long"
+                          },
+                          "sourceId": {
+                              "type": "long"
+                          },
+                          "sourceType": {
+                              "type": "long"
+                          },
+                          "status": {
+                              "type": "long"
+                          },
+                          "type": {
+                              "type": "long"
+                          },
+                          "width": {
+                              "type": "long"
+                          }
+                      }
+                  },
+                  "shareCount": {
+                      "type": "long"
+                  },
+                  "showInList": {
+                      "type": "boolean"
+                  },
+                  "startDate": {
+                      "type": "date",
+                      "format": "dateOptionalTime"
+                  },
+                  "status": {
+                      "type": "long"
+                  }
+              }
+          },
+          "propertyValues": {
+              "properties": {
+                  "id": {
+                      "type": "long"
+                  },
+                  "isColor": {
+                      "type": "boolean"
+                  },
+                  "isSize": {
+                      "type": "boolean"
+                  },
+                  "productId": {
+                      "type": "long"
+                  },
+                  "propertyDesc": {
+                      "type": "string"
+                  },
+                  "propertyId": {
+                      "type": "long"
+                  },
+                  "valueDesc": {
+                      "type": "string"
+                  }
+              }
+          },
+          "recommendUserId": {
+              "type": "long"
+          },
+          "recommendedReason": {
+              "type": "string"
+          },
+          "resource": {
+              "properties": {
+                  "colorId": {
+                      "type": "long"
+                  },
+                  "domain": {
+                      "type": "string"
+                  },
+                  "height": {
+                      "type": "long"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "isDefault": {
+                      "type": "boolean"
+                  },
+                  "name": {
+                      "type": "string"
+                  },
+                  "sortOrder": {
+                      "type": "long"
+                  },
+                  "sourceId": {
+                      "type": "long"
+                  },
+                  "sourceType": {
+                      "type": "long"
+                  },
+                  "status": {
+                      "type": "long"
+                  },
+                  "type": {
+                      "type": "long"
+                  },
+                  "width": {
+                      "type": "long"
+                  }
+              }
+          },
+          "section": {
+              "properties": {
+                  "contactPerson": {
+                      "type": "string"
+                  },
+                  "contactPhone": {
+                      "type": "string"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "location": {
+                      "type": "string"
+                  },
+                  "name": {
+                      "type": "string"
+                  },
+                  "status": {
+                      "type": "long"
+                  }
+              }
+          },
+          "shareCount": {
+              "type": "long"
+          },
+          "sortOrder": {
+              "type": "long"
+          },
+          "specialTopic": {
+              "properties": {
+                  "createUser": {
+                      "type": "long"
+                  },
+                  "createdDate": {
+                      "type": "date",
+                      "format": "dateOptionalTime"
+                  },
+                  "description": {
+                      "type": "string"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "name": {
+                      "type": "string"
+                  },
+                  "status": {
+                      "type": "long"
+                  },
+                  "type": {
+                      "type": "long"
+                  }
+              }
+          },
+          "status": {
+              "type": "long"
+          },
+          "stockPropertyValues": {
+              "properties": {
+                  "brandSizeCode": {
+                      "type": "string"
+                  },
+                  "brandSizeName": {
+                      "type": "string"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "inventoryId": {
+                      "type": "long"
+                  },
+                  "propertyData": {
+                      "type": "string"
+                  },
+                  "updateTime": {
+                      "type": "date",
+                      "format": "dateOptionalTime"
+                  }
+              }
+          },
+          "store": {
+              "properties": {
+                  "address": {
+                      "type": "string"
+                  },
+                  "description": {
+                      "type": "string",
+                      "store": "no",
+                      "term_vector": "with_positions_offsets",
+                      "analyzer": "ik_max_word",
+                      "search_analyzer": "ik_max_word",
+                      "boost": 1
+                  },
+                  "gpsLat": {
+                      "type": "double"
+                  },
+                  "gpsLng": {
+                      "type": "double"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "location": {
+                      "properties": {
+                          "lat": {
+                              "type": "double"
+                          },
+                          "lon": {
+                              "type": "double"
+                          }
+                      }
+                  },
+                  "name": {
+                      "type": "string",
+                      "store": "no",
+                      "term_vector": "with_positions_offsets",
+                      "analyzer": "ik_max_word",
+                      "search_analyzer": "ik_max_word",
+                      "include_in_all": "false",
+                      "boost": 1
+                  },
+                  "status": {
+                      "type": "long"
+                  },
+                  "tel": {
+                      "type": "string"
+                  }
+              }
+          },
+          "tag": {
+              "properties": {
+                  "description": {
+                      "type": "string"
+                  },
+                  "id": {
+                      "type": "long"
+                  },
+                  "name": {
+                    "type": "string",
+                    "store": "no",
+                    "term_vector": "with_positions_offsets",
+                    "analyzer": "ik_max_word",
+                    "search_analyzer": "ik_max_word",
+                    "include_in_all": "false",
+                    "boost": 1
+                  },
+                  "sizeType": {
+                      "type": "long"
+                  },
+                  "sortOrder": {
+                      "type": "long"
+                  },
+                  "status": {
+                      "type": "long"
+                  }
+              }
+          },
+          "totalGramWeight": {
+              "type": "double"
+          },
+          "unitPrice": {
+              "type": "double"
+          },
+          "upcCode": {
+              "type": "string"
+          },
+          "updatedDate": {
+              "type": "date",
+              "format": "dateOptionalTime"
+          }
+      }
+  }
+}
+'
